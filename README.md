@@ -1,6 +1,7 @@
 # dday
 
-A new Flutter project.
+D-Day application for couple
+Mini project using Flutter
 
 ## Getting Started
 
