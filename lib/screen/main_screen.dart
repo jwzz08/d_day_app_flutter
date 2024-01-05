@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -79,6 +78,8 @@ class _TopPart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
     final now = DateTime.now();
 
     return Expanded(
@@ -86,26 +87,16 @@ class _TopPart extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text('U&I',
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'parisienne',
-                fontSize: 80.0,
-              )),
+              style: textTheme.headline1),
           Column(
             children: [
               Text(
                 '우리 처음 만난 날',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'sunflower',
-                    fontSize: 30.0),
+                style: textTheme.bodyText1
               ),
               Text(
                 '${selectedDate.year}.${selectedDate.month}.${selectedDate.day}',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'sunflower',
-                    fontSize: 20.0),
+                style: textTheme.bodyText2
               ),
             ],
           ),
@@ -116,11 +107,7 @@ class _TopPart extends StatelessWidget {
               color: Colors.red),
           Text(
             'D+${DateTime(now.year, now.month, now.day).difference(selectedDate).inDays + 1}',
-            style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'sunflower',
-                fontSize: 50.0,
-                fontWeight: FontWeight.w700),
+            style: textTheme.headline2
           ),
         ],
       ),
